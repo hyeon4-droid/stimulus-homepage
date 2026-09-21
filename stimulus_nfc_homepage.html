@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#315efb">
+<meta name="description" content="자극의 의미와 종류, 자극과 반응을 알아보는 교육용 홈페이지">
+<title>자극 | Stimulus</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,"Noto Sans KR","Malgun Gothic",sans-serif;color:#172033;background:#f6f8fc;line-height:1.7}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid #e5e9f2}
+nav{max-width:1120px;height:68px;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:22px;font-weight:900;color:#315efb}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-size:14px;font-weight:700;color:#344054;text-decoration:none}
+.nav-links a:hover{color:#315efb}
+.menu{display:none;border:0;background:#eef2ff;color:#315efb;border-radius:10px;padding:8px 11px;font-size:20px}
+.hero{min-height:650px;display:flex;align-items:center;padding:80px 24px;background:linear-gradient(135deg,#eaf0ff,#f8fbff 58%,#edf9f5)}
+.hero-inner{max-width:1120px;width:100%;margin:auto}
+.badge{display:inline-block;background:#dfe8ff;color:#315efb;padding:7px 13px;border-radius:999px;font-size:13px;font-weight:800;margin-bottom:20px}
+h1{font-size:clamp(55px,9vw,100px);line-height:1;letter-spacing:-5px;margin-bottom:22px}
+.hero h2{font-size:clamp(24px,4vw,40px);margin-bottom:12px;letter-spacing:-1px}
+.hero p{max-width:670px;color:#536078;font-size:18px}
+.btn{display:inline-block;margin-top:30px;padding:14px 22px;border-radius:13px;background:#315efb;color:#fff;font-weight:800;box-shadow:0 10px 25px rgba(49,94,251,.22)}
+section{max-width:1120px;margin:auto;padding:90px 24px}
+.title{font-size:36px;letter-spacing:-1.5px;margin-bottom:10px}
+.desc{color:#667085;margin-bottom:36px}
+.definition{background:#fff;border:1px solid #e6eaf1;border-radius:24px;padding:36px;box-shadow:0 10px 35px rgba(20,30,60,.05)}
+.definition .big{font-size:25px;font-weight:800;margin-bottom:13px}
+.highlight{color:#315efb}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.card{background:#fff;border:1px solid #e6eaf1;border-radius:20px;padding:25px;min-height:190px;transition:.2s}
+.card:hover{transform:translateY(-5px);box-shadow:0 13px 30px rgba(20,30,60,.09)}
+.icon{font-size:34px;margin-bottom:12px}
+.card h3{margin-bottom:7px;font-size:18px}
+.card p{font-size:14px;color:#667085}
+.flow{display:grid;grid-template-columns:1fr 30px 1fr 30px 1fr 30px 1fr 30px 1fr;align-items:center}
+.step{background:#fff;border:1px solid #e6eaf1;border-radius:18px;padding:22px 14px;text-align:center;min-height:150px}
+.step span{font-size:12px;color:#315efb;font-weight:900}
+.step h3{margin:7px 0 5px}
+.step p{font-size:13px;color:#667085}
+.arrow{text-align:center;font-size:23px;color:#98a2b3}
+.examples{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.example{background:#fff;border:1px solid #e6eaf1;border-radius:20px;padding:25px}
+.example h3{margin-bottom:8px}
+.example p{color:#667085;font-size:14px}
+.psych{background:#172033;color:#fff;border-radius:25px;padding:40px}
+.psych p{color:#c9d1df}
+.quiz{background:#fff;border:1px solid #e6eaf1;border-radius:24px;padding:35px}
+.question{font-size:21px;font-weight:800;margin-bottom:20px}
+.options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.option{border:1px solid #dfe4ec;background:#f8f9fc;padding:14px;border-radius:12px;cursor:pointer;font-weight:700}
+.option:hover{border-color:#315efb;background:#eef2ff}
+#result{margin-top:18px;font-weight:800;min-height:27px}
+footer{background:#172033;color:#c9d1df;text-align:center;padding:35px 20px;font-size:13px}
+footer strong{color:#fff}
+.top{position:fixed;right:22px;bottom:22px;width:45px;height:45px;border-radius:50%;border:0;background:#315efb;color:white;font-size:18px;cursor:pointer;box-shadow:0 8px 20px rgba(49,94,251,.25)}
+@media(max-width:900px){
+.cards{grid-template-columns:repeat(2,1fr)}
+.flow{grid-template-columns:1fr}
+.arrow{transform:rotate(90deg);height:35px;display:flex;align-items:center;justify-content:center}
+}
+@media(max-width:650px){
+nav{height:60px;padding:0 16px}
+.nav-links{display:none}
+.menu{display:block}
+.hero{min-height:570px;padding:65px 20px}
+h1{letter-spacing:-3px}
+.hero p{font-size:16px}
+section{padding:65px 18px}
+.title{font-size:30px}
+.definition{padding:25px}
+.cards,.examples,.options{grid-template-columns:1fr}
+.card{min-height:auto}
+.psych{padding:28px 24px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<a class="logo" href="#home">STIMULUS</a>
+<ul class="nav-links">
+<li><a href="#definition">자극이란?</a></li>
+<li><a href="#types">종류</a></li>
+<li><a href="#process">과정</a></li>
+<li><a href="#examples">사례</a></li>
+<li><a href="#psychology">심리학</a></li>
+<li><a href="#quiz">퀴즈</a></li>
+</ul>
+<button class="menu" onclick="alert('위 메뉴를 이용해 원하는 내용을 확인해 보세요!')">☰</button>
+</nav>
+</header>
+
+<main id="home">
+<section class="hero">
+<div class="hero-inner">
+<span class="badge">SCIENCE · PSYCHOLOGY</span>
+<h1>자극</h1>
+<h2>Stimulus</h2>
+<p>우리 주변의 변화는 어떻게 우리의 감각과 행동을 변화시킬까요?<br>자극의 의미부터 우리 몸의 반응, 심리학과의 연결까지 알아봅니다.</p>
+<a class="btn" href="#definition">자극 알아보기 ↓</a>
+</div>
+</section>
+
+<section id="definition">
+<h2 class="title">자극이란?</h2>
+<p class="desc">우리 몸이 외부 또는 내부의 변화를 감지하게 만드는 정보를 말합니다.</p>
+<div class="definition">
+<div class="big">자극 = <span class="highlight">몸에 변화를 일으키는 환경의 변화</span></div>
+<p>빛, 소리, 온도, 냄새, 압력처럼 주변에서 발생하는 다양한 변화가 우리의 감각기관에 전달되면 우리는 이를 느끼고 그에 맞게 반응합니다. 자극은 생명체가 주변 환경과 상호작용하는 중요한 출발점입니다.</p>
+</div>
+</section>
+
+<section id="types">
+<h2 class="title">자극의 종류</h2>
+<p class="desc">우리 주변에는 다양한 형태의 자극이 존재합니다.</p>
+<div class="cards">
+<div class="card"><div class="icon">☀️</div><h3>빛</h3><p>밝은 빛이 눈에 들어오면 눈이 자극을 받아 주변을 볼 수 있습니다.</p></div>
+<div class="card"><div class="icon">🔊</div><h3>소리</h3><p>소리는 귀의 청각기관을 자극하여 소리를 듣게 합니다.</p></div>
+<div class="card"><div class="icon">🌡️</div><h3>온도</h3><p>뜨겁거나 차가운 환경의 변화는 피부의 감각을 자극합니다.</p></div>
+<div class="card"><div class="icon">👃</div><h3>냄새</h3><p>공기 중의 화학 물질이 후각기관을 자극하여 냄새를 느끼게 합니다.</p></div>
+<div class="card"><div class="icon">✋</div><h3>압력·접촉</h3><p>피부에 가해지는 압력이나 접촉도 감각을 일으키는 자극입니다.</p></div>
+</div>
+</section>
+
+<section id="process">
+<h2 class="title">자극은 어떻게 반응으로 이어질까?</h2>
+<p class="desc">자극을 감지한 뒤 정보가 전달되고, 우리는 상황에 맞는 반응을 보입니다.</p>
+<div class="flow">
+<div class="step"><span>01</span><h3>자극</h3><p>뜨거운 물체가 피부에 닿음</p></div>
+<div class="arrow">→</div>
+<div class="step"><span>02</span><h3>감각기관</h3><p>피부의 감각 수용기가 자극을 감지</p></div>
+<div class="arrow">→</div>
+<div class="step"><span>03</span><h3>정보 전달</h3><p>신경계를 통해 정보가 전달됨</p></div>
+<div class="arrow">→</div>
+<div class="step"><span>04</span><h3>판단</h3><p>뇌가 들어온 정보를 처리함</p></div>
+<div class="arrow">→</div>
+<div class="step"><span>05</span><h3>반응</h3><p>손을 움직여 물체에서 멀어짐</p></div>
+</div>
+</section>
+
+<section id="examples">
+<h2 class="title">생활 속 자극</h2>
+<p class="desc">우리는 하루에도 수많은 자극을 경험합니다.</p>
+<div class="examples">
+<div class="example"><h3>📱 휴대폰 알림</h3><p>알림음이라는 소리 자극을 듣고 휴대폰을 확인합니다.</p></div>
+<div class="example"><h3>☀️ 강한 햇빛</h3><p>강한 빛이 눈을 자극하면 눈을 가늘게 뜨거나 눈을 감게 됩니다.</p></div>
+<div class="example"><h3>🧊 차가운 물</h3><p>차가운 온도가 피부를 자극하여 차갑다는 감각을 느낍니다.</p></div>
+<div class="example"><h3>🍋 신 음식</h3><p>음식의 화학적 성분이 미각을 자극하여 맛을 느끼게 합니다.</p></div>
+</div>
+</section>
+
+<section id="psychology">
+<div class="psych">
+<h2 class="title">자극과 심리학</h2>
+<p>자극은 단순히 몸이 느끼는 변화에 그치지 않습니다. 사람은 같은 자극을 받아도 상황과 경험에 따라 다르게 인식하고 행동할 수 있습니다.</p>
+<br>
+<p><strong>자극 → 감각 → 인지 → 행동</strong>이라는 과정을 살펴보면 인간이 주변 환경을 어떻게 받아들이고 행동으로 이어가는지 이해하는 데 도움이 됩니다. 이러한 점에서 자극은 심리학에서 감각, 지각, 인지와 행동을 이해하는 출발점으로 연결될 수 있습니다.</p>
+</div>
+</section>
+
+<section id="quiz">
+<h2 class="title">미니 퀴즈</h2>
+<p class="desc">배운 내용을 간단하게 확인해 보세요.</p>
+<div class="quiz">
+<div class="question">Q. 뜨거운 물체를 만졌을 때 손을 재빨리 움직이는 것은 무엇일까요?</div>
+<div class="options">
+<button class="option" onclick="check(1)">① 자극</button>
+<button class="option" onclick="check(2)">② 반응</button>
+<button class="option" onclick="check(3)">③ 감각기관</button>
+<button class="option" onclick="check(4)">④ 환경</button>
+</div>
+<div id="result"></div>
+</div>
+</section>
+</main>
+
+<footer>
+<p><strong>STIMULUS</strong> · 자극을 이해하는 작은 과학 홈페이지</p>
+<p>NFC 태그 또는 웹 링크를 통해 접속할 수 있습니다.</p>
+</footer>
+
+<button class="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+function check(answer){
+ const result=document.getElementById("result");
+ if(answer===2){
+   result.textContent="정답입니다! 뜨거운 자극에 대한 몸의 행동이므로 '반응'입니다. 🎉";
+   result.style.color="#315efb";
+ }else{
+   result.textContent="아쉬워요. 다시 생각해 보세요!";
+   result.style.color="#e04444";
+ }
+}
+</script>
+</body>
+</html>
